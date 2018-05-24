@@ -1,0 +1,25 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Hello world{% endblock %}
+
+{% block body %}
+ <p>Hello World</p>
+  <form method="POST">
+  <label for="name">name</label>
+  <input type="text" id="name" name="name">
+  <label for="age">age</label>
+  <input type="text" id="age" name="age">
+  <label for="likes">Likes</label>
+  <input type="text" id="Likes" name="likes">
+  <input type="submit" value="submit">
+ </form>
+
+  {% if rows1 %}
+    {% for row in rows1 %}
+      <p>Hello your name {{row.name}} and your age is {{row.age}} and you like {{row.likes}}</p>
+      <a href="delete/{{row.id}}">delete</a>
+    {% endfor %}
+  {% else %}
+      <p>No user available right now....</p>
+  {% endif %}
+{% endblock %}
